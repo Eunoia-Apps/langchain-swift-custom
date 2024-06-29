@@ -88,7 +88,7 @@ struct TranscriptListFetcher {
 
             let response = try await http_client.execute(request, timeout: .seconds(30))
             if response.status == .ok {
-                return String(buffer: try await response.body.collect(upTo: 1024 * 1024))
+                return String(buffer: try await response.body.collect(upTo: 1024 * 1024 * 50))
             } else {
                 // handle remote error
                 print("get list http code is not 200.\(response.body)")

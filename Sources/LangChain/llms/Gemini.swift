@@ -13,7 +13,7 @@ public class Gemini: LLM {
         let env = LC.loadEnv()
         
         if let apiKey = env["GOOGLEAI_API_KEY"] {
-            let model = GenerativeModel(name: "gemini-1.0-pro-latest", apiKey: apiKey, safetySettings: [
+            let model = GenerativeModel(name: "gemini-1.5-flash-latest", apiKey: apiKey, safetySettings: [
         
         SafetySetting(harmCategory: .dangerousContent, threshold: .blockNone),
         SafetySetting(harmCategory: .harassment, threshold: .blockNone),
